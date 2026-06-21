@@ -1,10 +1,6 @@
 .page {
+  background: var(--bg-image) no-repeat center / cover fixed;
   background-color: var(--bg-color);
-  background-image: var(--bg-image);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 /* HEADER */
@@ -33,15 +29,15 @@
 .decorated-zone::before {
   top: var(--spacing-s);
   right: var(--spacing-s);
-  border-top: 1px solid var(--color-accent);
-  border-right: 1px solid var(--color-accent);
+  border-top: 1px solid var(--color-decor-element);
+  border-right: 1px solid var(--color-decor-element);
 }
 
 .decorated-zone::after {
   bottom: var(--spacing-s);
   left: var(--spacing-s);
-  border-bottom: 1px solid var(--color-accent);
-  border-left: 1px solid var(--color-accent);
+  border-bottom: 1px solid var(--color-decor-element);
+  border-left: 1px solid var(--color-decor-element);
 }
 
 .decorated-zone-element {
@@ -49,10 +45,10 @@
   top: var(--spacing-s);
   right: var(--spacing-m);
   z-index: 1;
-  display: inline-block;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--color-accent);
+  color: var(--color-decor-element);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-main);
   line-height: 1.5625;
@@ -65,8 +61,8 @@
   width: var(--spacing-s);
   height: var(--spacing-s);
   border-radius: 50%;
-  box-shadow: 0 0 4px 2px var(--color-accent);
-  background-color: var(--color-accent);
+  box-shadow: 0 0 4px 2px var(--color-decor-element);
+  background-color: var(--color-decor-element);
 }
 
 .header__theme-menu {
@@ -82,7 +78,7 @@
 .header__theme-menu-button {
   border: none;
   padding: 4px 14px;
-  color: var(--color-accent);
+  color: var(--color-button);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-main);
   line-height: 1;
@@ -92,7 +88,7 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid color-mix(in srgb, var(--color-accent) 40%, transparent);
+  outline: 1px solid color-mix(in srgb, var(--color-button) 40%, transparent);
 }
 
 .header__theme-menu-button:focus {
@@ -100,14 +96,12 @@
 }
 
 .header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--color-button);
   outline: transparent;
-  text-decoration: underline;
-  text-decoration-color: var(--color-accent);
-  text-underline-offset: 2px;
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--color-accent);
+  outline: 1px solid var(--color-button);
   pointer-events: none;
 }
 
@@ -122,7 +116,7 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 0.83;
   text-transform: lowercase;
-  text-shadow: 4px 4px 0 var(--color-accent);
+  text-shadow: 4px 4px 0 var(--color-title-accent);
 }
 
 .header__subtitle {
@@ -132,7 +126,7 @@
 }
 
 .title-decor {
-  color: var(--color-secondary);
+  color: var(--color-text-secondary);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-main);
   line-height: 1.3;
@@ -165,7 +159,7 @@
 
 .container__card-text {
   padding-top: var(--spacing-s);
-  color: var(--color-main);
+  color: var(--color-text-main);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-main);
   line-height: 1.3;
@@ -174,14 +168,12 @@
 .container__card-link {
   font-family: inherit;
   text-decoration: none;
-  text-shadow: 2px 2px 0 var(--color-accent);
+  text-shadow: 2px 2px 0 var(--color-link-accent);
   cursor: pointer;
 }
 
 .container__card-link:hover {
-  text-decoration: underline;
-  text-decoration-color: var(--color-main);
-  text-underline-offset: 2px;
+  border-bottom: 1px solid var(--color-link-main);
 }
 
 .container__card-link:focus {
@@ -189,7 +181,7 @@
 }
 
 .container__card-link:focus-visible {
-  outline: 1px solid var(--color-accent);
+  outline: 1px solid var(--color-link-main);
   outline-offset: 2px;
 }
 
@@ -226,17 +218,7 @@
 }
 
 .footer__title {
-  text-shadow: 2px 2px 0 var(--color-accent);
-}
-
-.footer.decorated-zone::before {
-  top: var(--spacing-s);
-  right: var(--spacing-s);
-}
-
-.footer.decorated-zone::after {
-  bottom: var(--spacing-s);
-  left: var(--spacing-s);
+  text-shadow: 2px 2px 0 var(--color-footer-accent);
 }
 
 /* WIDTH 768px */
@@ -332,16 +314,6 @@
   .footer {
     height: 100vh;
     min-height: 1024px;
-  }
-
-  .footer.decorated-zone::before {
-    top: var(--spacing-m);
-    right: var(--spacing-m);
-  }
-
-  .footer.decorated-zone::after {
-    bottom: var(--spacing-m);
-    left: var(--spacing-m);
   }
 }
 
